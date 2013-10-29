@@ -37,3 +37,10 @@ nextFactor k n = head [f | f <- [1..n], n `mod` f == 0, f > k]
 
 smallestFactor :: Int -> Int
 smallestFactor n = nextFactor 1 n
+
+-- 2.2.1 Multiplying List Elements
+-- Multiply
+multiply :: Num a => [a] -> a
+multiply [] = 1
+multiply (x:xs) = x * multiply xs
+
