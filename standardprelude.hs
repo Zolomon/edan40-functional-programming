@@ -44,3 +44,7 @@ multiply :: Num a => [a] -> a
 multiply [] = 1
 multiply (x:xs) = x * multiply xs
 
+-- substitution
+substitute :: Char -> Char -> [Char] -> [Char]
+substitute x y str = [if x == c then y else c | c <- str]
+
