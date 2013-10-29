@@ -28,3 +28,12 @@ sumsqmp n = take n (map (^2) [1..])
 hanoi :: Int -> Int
 hanoi n = 2^n-1
 
+-- Calculate smallest factor of a number, 1 exlusive. 
+numFactors :: Int -> Int
+numFactors n = length [f | f <- [1..n], n `mod` f == 0]
+
+nextFactor :: Int -> Int -> Int
+nextFactor k n = head [f | f <- [1..n], n `mod` f == 0, f > k]
+
+smallestFactor :: Int -> Int
+smallestFactor n = nextFactor 1 n
